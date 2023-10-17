@@ -1,0 +1,38 @@
+User's Browser
+   |
+   v
+DNS Resolution
+   |
+   v
+Establishing a TCP Connection
+   |
+   v
+SSL/TLS Handshake (Encryption)
+   |
+   v
+Firewall
+   |
+   v
+Load Balancer
+   |
+   v
+Web Server
+   |
+   v
+Application Server
+   |
+   v
+Database
+   |
+   v
+Generating a Webpage
+   |
+   v
+Sending the Response
+   |
+   v
+Rendering the Webpage
+   |
+   v
+Displaying the Webpage
+

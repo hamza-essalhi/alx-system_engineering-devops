@@ -1,0 +1,28 @@
+When you type "https://www.google.com" into your web browser's address bar and press Enter, several steps occur behind the scenes to load the Google website:
+
+DNS Resolution: Your browser first needs to translate the human-readable domain name "www.google.com" into an IP address. It does this by sending a Domain Name System (DNS)
+query to a DNS server, which returns the IP address associated with the domain.
+
+Establishing a TCP Connection: Once your browser has the IP address, it establishes a Transmission Control Protocol (TCP) connection to the web server that hosts Google's website.
+This connection allows for reliable data transfer between your computer and the server.
+
+SSL/TLS Handshake (if "https" is used): Since you specified "https" in the URL, a secure connection is established. Your browser and the web server negotiate encryption settings
+using the SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocol. This ensures that the data transmitted between your browser and Google is encrypted and secure.
+
+Sending an HTTP Request: Your browser sends an HTTP (Hypertext Transfer Protocol) request to the Google web server. This request contains information about the resource you are 
+trying to access (in this case, the main Google webpage).
+
+Web Server Processing: Google's web server receives the request and processes it. It identifies the resource you requested and may also use various algorithms and technologies
+to deliver personalized content based on your location and previous interactions.
+
+Generating a Webpage: Google's web server generates the HTML, CSS, JavaScript, and other resources needed to display the Google search page. This can include search results,
+advertisements, and other elements.
+
+Sending the Response: The web server sends the response, which includes the HTML and other resources, back to your browser over the established connection.
+
+Rendering the Webpage: Your browser receives the response and starts rendering the webpage. It processes the HTML, applies styles with CSS, executes any JavaScript,
+and displays the webpage on your screen.
+
+Displaying the Webpage: Finally, you see the Google homepage in your browser, and you can interact with it, enter search queries, and use the various features provided by Google.
+
+This entire process happens in a matter of seconds, and it allows you to access and interact with Google's search engine and other services over the internet.
