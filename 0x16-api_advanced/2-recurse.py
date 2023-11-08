@@ -1,32 +1,22 @@
 #!/usr/bin/python3
-"""
-Recursively for all hot articles of a given subreddit
-"""
+"""A recursive function that queries the Reddit API and returns a list
+containing the titles of all hot articles for a given subreddit"""
+
 import requests
 
 
-def recurse(subreddit, hot_list=[], after="tmp"):
-    """
-        Return all hot articles for a given subreddit
-        or None if invalid subreddit given
-    """
-    headers = requests.utils.default_headers()
-    headers.update({'User-Agent': 'My User Agent 1.0'})
-
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    if after != "tmp":
-        url = url + "?after={}".format(after)
-    r = requests.get(url, headers=headers, allow_redirects=False)
-
-    results = r.json().get('data', {}).get('children', [])
-    if not results:
-        if after == "tmp":
-            return None
-        return hot_list
-    for e in results:
-        hot_list.append(e.get('data').get('title'))
-
-    after = r.json().get('data').get('after')
-    if not after:
-        return hot_list
-    return (recurse(subreddit, hot_list, after))
+def recurse(subreddit, hot_list=[]):
+    """returns the number of all hot articles of a given subreddit"""
+    r = requests.get(r'https://www.reddit.com/r/{}/hot/.json'
+                     .format(subreddit), headers={'User-agent': 'x'},
+                     allow_redirects=False)
+    l = r.json().get('data').get('children')
+    if r.status_code != 200:
+        return None
+    # return [subreddit] + hot_list
+    if hot_list == []:
+        return None
+    else:
+        k = hot_list[0]
+        small_list = hot_list[1:]
+        return k + recurse(small_list)
